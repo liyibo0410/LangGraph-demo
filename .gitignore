@@ -1,0 +1,20 @@
+# 敏感信息（绝对不能上传）
+.env
+
+# 虚拟环境
+.venv/
+venv/
+env/
+
+# Python缓存
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# IDE配置
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
