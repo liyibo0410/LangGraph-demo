@@ -15,7 +15,7 @@ from pydantic import BaseModel, Field     #制作回答模板的工具，规定 
 # pydantic：数据校验工具，用来定义固定数据模板
 
 # 大模型配置，连接 AI 大模型（初始化客户端）
-llm = ChatOpenAI(
+llm = ChatOpenAI(                               #LLM大语言模型实例
     model="deepseek-ai/DeepSeek-V4-Flash",      #model：你要调用的 AI 模型名字
     temperature=0.7,                            #temperature=0.7：AI 脑洞大小。0 = 死板固定，1 = 天马行空；
     base_url=os.getenv("SILICON_BASE_URL"),     #base_url：AI 服务的网络地址，从.env 配置文件读取，不写死代码
@@ -23,10 +23,11 @@ llm = ChatOpenAI(
 )
 
 # 定义JSON结构
-class Joke(BaseModel):
+class Joke(BaseModel):                          #自定义数据模式（Schema），继承 Pydantic 基础模板类
     title: str = Field(description='笑话的标题,简洁有趣')
-    content: str = Field(description='笑话的正文内容,幽默诙谐')
+    content: str = Field(description='笑话的正文内容,幽默诙谐')            #字段名 + 类型约束
     theme: str = Field(description='笑话的主题,比如 日常、职场、动物')
+                #Field(description="xxx")：字段元描述，会直接传给 AI，告诉 AI 这个字段该填什么内容
 
 # JSON解析器
 jsp = JsonOutputParser(pydantic_object=Joke)
