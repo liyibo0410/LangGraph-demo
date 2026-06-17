@@ -1,16 +1,16 @@
-# 这是一个示例 Python 脚本。
+from langchain_openai import ChatOpenAI
+# 重点：带上文件夹名260616
+from lm_config import lm_config
 
-# 按 Shift+F10 执行或将其替换为您的代码。
-# 按 双击 Shift 在所有地方搜索类、文件、工具窗口、操作和设置。
+# 实例化模型
+llm = ChatOpenAI(
+    model=lm_config.llm_model,
+    temperature=lm_config.temperature,
+    base_url=lm_config.base_url,
+    api_key=lm_config.api_key
+)
 
-
-def print_hi(name):
-    # 在下面的代码行中使用断点来调试脚本。
-    print(f'Hi, {name}')  # 按 Ctrl+F8 切换断点。
-
-
-# 按装订区域中的绿色按钮以运行脚本。
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# 访问 https://www.jetbrains.com/help/pycharm/ 获取 PyCharm 帮助
+# 测试调用
+if __name__ == "__main__":
+    res = llm.invoke("你好")
+    print(res.content)
