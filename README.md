@@ -1,8 +1,8 @@
 ```markdown
-# ==============================================
+# ==============================================================================================
 # 🚀 LangGraph-demo 项目完整说明文档 README.md
 # 项目定位：循序渐进 LangGraph 全套实战 Demo 学习库 📚
-# ==============================================
+# ==============================================================================================
 
 # 一、项目总览
 ## 1. 项目简介 📖
@@ -52,23 +52,25 @@ LangGraph-demo/
       └─ 02_loop_with_recursion_limit.py
 ”
 
-二、分模块文件功能详情
-模块1：260615/01_state 🧩 基础状态管理（入门必学）
+## 二、分模块文件功能详情
+
+### 模块1：260615/01_state 🍀 基础状态管理（入门必学）
+
 | 文件名 | 核心功能说明 |
-|--------|-------------|
-| 00_LangGraph快速入门.py | 🎯 极简 HelloWorld 示例，一次性看懂图完整运行链路 |
-| 01_Dict_user_state_demo.py | 📝 原生字典定义State，无类型约束，最简入门写法 |
-| 02_TypedDict_UserState_demo.py | ✍️ TypedDict 标准状态定义，带类型提示，企业项目通用方案 |
-| 03_TypedDict_AdvancedState_demo.py | 🧱 TypedDict 嵌套复杂结构（列表、子字典）高阶复合状态 |
+| :----- | :----------- |
+| 00_LangGraph快速入门.py | 🥳 极简 HelloWorld 示例，一次性看懂完整运行链路 |
+| 01_Dict_user_state_demo.py | 原生字典定义State，无类型约束，最简入门写法 |
+| 02_TypedDict_UserState_demo.py | 🔥 TypedDict 标准状态定义，带类型提示，企业项目通用方案 |
+| 03_TypedDict_AdvancedState_demo.py | 📦 TypedDict 嵌套复杂结构（列表、子字典）高阶复合状态 |
 | 04_Pydantic_UserState_demo.py | 🛡️ Pydantic 模型定义状态，自带数据校验、字段默认值 |
-| 05_Pydantic_AgentState_demo.py | 🤖 Agent专用状态封装，内置对话消息、工具返回、思考链路字段 |
-| 06_dataclass_UserState_demo.py | 📦 dataclass 数据类实现状态，兼顾简洁性与强类型约束 |
-| 07_input_output_workflow_demo.py | ↔️ 区分图初始输入、节点增量输出，规范输入输出隔离 |
+| 05_Pydantic_AgentState_demo.py | 🤖 Agent专用状态封装，内置对话消息、工具返回、思考链路段 |
+| 06_dataclass_UserState_demo.py | 📊 dataclass 数据类实现状态，兼顾简洁性与强类型约束 |
+| 07_input_output_workflow_demo.py | 📥 区分图初始输入、节点增量输出，规范输入输出隔离 |
 | 08_node_isolation_workflow_demo.py | 🔒 节点状态隔离原理：禁止直接修改原始state，仅通过返回字典更新 |
-| 09_reducer_default_demo.py | ⚪ 框架默认Reducer合并规则，基础字段覆盖逻辑演示 |
+| 09_reducer_default_demo.py | 🧩 框架默认Reducer合并规则，基础字段覆盖逻辑演示 |
 | 10_reducer_add_demo.py | ➕ Annotated + operator.add 列表累加器，对话消息追加核心用法 |
 | 11_reducer_custom_demo.py | 🛠️ 自定义Reducer归并函数，自由定制状态更新合并逻辑 |
-| 12_reducer_merge_node_state_demo.py | 🧩 多并行节点状态合并冲突解决方案 |
+| 12_reducer_merge_node_state_demo.py | ✨ 多并行节点状态合并冲突解决方案 |
 
 ## 模块2：260616/01_state 💾 持久化与底层原理（生产进阶）
 | 文件名 | 核心功能说明 |
