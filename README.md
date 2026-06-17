@@ -119,10 +119,9 @@ LangGraph-demo/
 ### 1. 一键安装全部依赖
 ```bash
 pip install langgraph langchain langchain-openai pydantic python-dotenv
-
 ```
-2. 全局模型统一配置 lm_config.py
-所有 LLM 相关 Demo 统一读取该文件，无需重复填写密钥：
+###2. 全局模型统一配置 lm_config.py
+####所有 LLM 相关 Demo 统一读取该文件，无需重复填写密钥：
 # lm_config.py 全局大模型配置 🤖
 class lm_config:
     llm_model = "deepseek-chat"
