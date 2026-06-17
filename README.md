@@ -129,6 +129,7 @@ class lm_config:
     base_url = "https://api.deepseek.com/v1"
     api_key = "替换为你的个人模型密钥"
 ```
+
 ##五、项目核心知识点总览 💡
 ###1. State 状态体系 🧩
 四种状态定义方案：原生 Dict / TypedDict / Pydantic /dataclass
