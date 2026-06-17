@@ -1,4 +1,4 @@
-# 🚀 LangGraph-demo 项目完整说明文档 README.md
+# 🚀 LangGraph-demo 项目完整说明文档 
 # 项目定位：循序渐进 LangGraph 全套实战 Demo 学习库 📚
 
 ## 一、项目总览
@@ -10,6 +10,7 @@
 学习笔记、面试复习素材、Agent开发生产模板复用 ✅
 
 ### 2. 完整目录树结构 📂
+```python
 LangGraph-demo/
 ├─ 260615/
 │ └─ 01_state/ # 🧩 模块 1：基础状态定义 & Reducer 状态合并规则
@@ -49,6 +50,9 @@ LangGraph-demo/
 └─ 03_edge/ # 🔀 模块 4：条件分支、循环流程、递归安全限制
 ├─ 01_condition_edge.py
 └─ 02_loop_with_recursion_limit.py
+```
+
+
 
 ## 二、分模块文件功能详情
 ### 模块1：260615/01_state 🍀 基础状态管理（入门必学）
@@ -116,13 +120,16 @@ LangGraph-demo/
 
 ## 四、环境依赖配置 🧪
 ### 1. 一键安装全部依赖
-```bash
+```python
 pip install langgraph langchain langchain-openai pydantic python-dotenv
 ```
-###2. 全局模型统一配置 lm_config.py
-所有 LLM 相关 Demo 统一读取该文件，无需重复填写密钥：
-# lm_config.py 全局大模型配置 🤖
-```bash
+### 2. 全局模型统一配置 lm_config.py
+
+#### 所有 LLM 相关 Demo 统一读取该文件，无需重复填写密钥：
+
+##### lm_config.py 全局大模型配置 🤖
+
+```python
 class lm_config:
     llm_model = "deepseek-chat"
     model_provider = "deepseek"
@@ -130,27 +137,37 @@ class lm_config:
     api_key = "替换为你的个人模型密钥"
 ```
 
-##五、项目核心知识点总览 💡
-###1. State 状态体系 🧩
+## 五、项目核心知识点总览 💡
+
+### 1.State 状态体系 🧩
+
 四种状态定义方案：原生 Dict / TypedDict / Pydantic /dataclass
 Reducer 归并机制：内置列表累加器、自定义合并函数，解决并行节点状态覆盖问题
 ###2. Node 节点开发规范 ⚙️
 强制规范：禁止返回完整 state，仅返回需要更新的字段字典
 内置增强能力：TTL 缓存、指数退避自动重试、runtime 自定义流输出、interrupt 流程暂停
 5 种流式模式适配不同前端展示场景：全量状态、增量更新、自定义进度、LLM 逐字 Token、底层调试日志
-###3. Edge 流程控制 🔀
+
+### 2.Edge 流程控制 🔀
+
 普通固定边：add_edge 固定单向流转
 条件分支边：add_conditional_edges 动态路由多分支逻辑
 循环闭环 + recursion_limit 安全阈值，双层防护杜绝死循环
-###4. 持久化会话方案 💾
+
+### 3. 持久化会话方案 💾
+
 InMemorySaver：内存临时存储，仅本地调试使用，程序重启数据清空
 SqliteSaver：磁盘持久化存储，多会话隔离、中断恢复、历史快照回溯，适配生产人机协同审批流程
-##六、项目适用场景 🎯
+
+## 六、项目适用场景 🎯
+
 LangGraph 零基础系统自学、面试核心知识点复习 📝
 Agent 业务开发模板复用：工具循环调用、人工审批流程、流式对话、接口异常容错、缓存性能优化 🤖
 企业级 Agent 流程框架参考：标准化状态管理、会话持久化、死循环安全防护机制 🏢
 课程教学分步演示，完整拆解 LangGraph 底层执行链路 👨‍🏫
-##七、项目亮点 ✨
+
+## 七、项目亮点 ✨
+
 由浅入深分层设计，零基础也能循序渐进吃透 LangGraph
 全量代码超详细注释，无晦涩省略逻辑，新手零门槛
 区分「错误写法 + 标准规范写法」，规避生产环境高频踩坑点
