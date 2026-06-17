@@ -1,7 +1,6 @@
-# ==============================================================================================
 # 🚀 LangGraph-demo 项目完整说明文档 README.md
 # 项目定位：循序渐进 LangGraph 全套实战 Demo 学习库 📚
-# ==============================================================================================
+
 
 ## 一、项目总览
 ### 1. 项目简介 📖
@@ -120,3 +119,13 @@ LangGraph-demo/
 ### 1. 一键安装全部依赖
 ```bash
 pip install langgraph langchain langchain-openai pydantic python-dotenv
+
+```
+2. 全局模型统一配置 lm_config.py
+所有 LLM 相关 Demo 统一读取该文件，无需重复填写密钥：
+# lm_config.py 全局大模型配置 🤖
+class lm_config:
+    llm_model = "deepseek-chat"
+    model_provider = "deepseek"
+    base_url = "https://api.deepseek.com/v1"
+    api_key = "替换为你的个人模型密钥"
