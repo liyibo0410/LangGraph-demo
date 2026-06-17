@@ -100,7 +100,7 @@ LangGraph-demo/
 |--------|-------------|
 | 01_condition_edge.py | 🚦 add_conditional_edges 条件分支路由，根据状态动态切换下游执行节点 |
 | 02_loop_with_recursion_limit.py | 🔄 闭环循环流程图 + recursion_limit 递归步数安全保护，双层机制防止死循环卡死程序 |
-
+```
 # 三、推荐学习路线（由浅入深）📖
 1. 【入门基础 🌱】
    `00_LangGraph快速入门.py` → 全部 01_state 基础状态Demo
@@ -113,20 +113,26 @@ LangGraph-demo/
 3. 【流程调度逻辑 🔀】
    03_edge 条件分支 + 循环控制Demo
    目标：实现多分支分流、多轮迭代Agent循环流程
+```
+```
 
 4. 【生产环境进阶 🏭】
    260616/01_state 持久化、会话恢复、Pregel底层原理
    目标：掌握线上会话记忆、断点续跑、底层执行机制
-
+```
+```
 # 四、环境依赖配置 🧪
 ## 1. 一键安装全部依赖
 ```bash
-pip install langgraph langchain langchain-openai pydantic python-dotenv
 ```
 
+pip install langgraph langchain langchain-openai pydantic python-dotenv
+```
+```
 ## 2. 全局模型统一配置 lm_config.py
 所有LLM相关Demo统一读取该文件，无需重复填写密钥：
 ```python
+```
 # lm_config.py 全局大模型配置 🤖
 class lm_config:
     llm_model = "deepseek-chat"
@@ -134,7 +140,7 @@ class lm_config:
     base_url = "https://api.deepseek.com/v1"
     api_key = "替换为你的个人模型密钥"
 ```
-
+```
 # 五、项目核心知识点总览 💡
 ## 1. State 状态体系 🧩
 1. 四种状态定义方案：原生Dict / TypedDict / Pydantic / dataclass
