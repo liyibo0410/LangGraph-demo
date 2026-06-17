@@ -21,7 +21,7 @@ class State(TypedDict):
     aggregate: Annotated[list, operator.add]
 
 # ====================== 2. 定义各个节点执行函数 ======================
-# 所有节点统一参数：state=当前全局状态，config=运行配置
+# 所有节点统一参数：01_state=当前全局状态，config=运行配置
 # 返回字典，仅更新指定状态字段
 def a(state: State, config):
     print(f'Adding "A" to {state["aggregate"]}')
@@ -70,7 +70,7 @@ graph.add_edge("d", END)
 
 # ====================== 5. 配置持久化存储：Sqlite检查点 ======================
 # 创建存放数据库文件的文件夹，exist_ok=True文件夹存在也不报错
-os.makedirs("./sqlite_data", exist_ok=True)
+os.makedirs("sqlite_data", exist_ok=True)
 # 连接本地sqlite数据库文件
 # check_same_thread=False：多线程场景兼容，单脚本运行可加
 conn = sqlite3.connect(database="./sqlite_data/checkpointer.db", check_same_thread=False)

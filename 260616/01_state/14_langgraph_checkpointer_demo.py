@@ -33,7 +33,7 @@ class AgentState(TypedDict):
 
 # ====================== 2. 定义业务节点函数 echo_node ======================
 # 图中唯一业务节点：接收全局状态，处理对话并更新上下文记忆
-# 入参 state：当前会话加载到的全局 AgentState 状态
+# 入参 01_state：当前会话加载到的全局 AgentState 状态
 def echo_node(state: AgentState):
     # 从全局状态中取出本次用户输入的问题
     query = state["query"]

@@ -54,7 +54,7 @@ def rag_search_node(state: MyState):
 # 2.2 全网实时搜索节点：并行执行，同时读取用户问题，模拟联网搜索
 def web_search_node(state: MyState):
     print("🌏【实时网络搜索】全网查询最新案例...")
-    # 另一种取状态字段写法：state["query"] 等价 state.get("query")，不存在key会直接报错
+    # 另一种取状态字段写法：01_state["query"] 等价 01_state.get("query")，不存在key会直接报错
     query = state["query"]
 
     # 模拟联网搜索接口等待2秒

@@ -45,7 +45,7 @@ try:
     print(f"RAG结果: {state.rag_result}")
 
     # # 4. 转成dict
-    # state_dict = state.model_dump()
+    # state_dict = 01_state.model_dump()
     # print(f"序列化后的字典: {state_dict}")
 
 except ValueError as e:

@@ -49,7 +49,7 @@ class MyState(TypedDict):
 """
 【节点是什么？】
 节点就是工作流里的「执行步骤」，每个节点对应一个函数。
-- 输入：当前的全局状态 state
+- 输入：当前的全局状态 01_state
 - 输出：一个字典，里面是你要更新的状态字段，LangGraph 会自动把它合并到全局状态里
 
 下面定义了 3 个节点，模拟工作流里的 3 个步骤
@@ -111,7 +111,7 @@ def demo_langgraph():
     # --------------------------
     # 先创建一个文件夹 ./sqlite_data，用来放数据库文件
     # exist_ok=True：如果文件夹已经存在，也不会报错
-    os.makedirs("./sqlite_data", exist_ok=True)
+    os.makedirs("sqlite_data", exist_ok=True)
 
     # 创建 SQLite 数据库连接对象
     # database：数据库文件的保存路径，会自动生成 .db 文件
